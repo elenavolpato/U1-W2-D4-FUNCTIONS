@@ -64,7 +64,7 @@ console.log("in the boundary: ", boundary(37));
  ritornare la stringa originale senza alterarla.
 */
 
-console.log("<---- ESERCIZIO 6 ---->");
+console.log("<---- ESERCIZIO 5 ---->");
 function epify(str) {
   let strInArray = str.split(" ");
   if (strInArray[0].toLowerCase() === "epicode") {
@@ -83,16 +83,18 @@ console.log("with epicode: ", epify("Epicode è una scoula italina di coding"));
  di 3 o di 7. (Suggerimento: usa l'operatore modulo)
 */
 console.log("<---- ESERCIZIO 6 ---->");
-function epify(str) {
-  let strInArray = str.split(" ");
-  if (strInArray[0].toLowerCase() === "epicode") {
-    return str;
+function check3and7(n) {
+  if (typeof n === "number") {
+    if (n % 3 === 0 || n % 7 === 0) {
+      return true;
+    } else false;
   } else {
-    strInArray.unshift("Epicode");
-    return strInArray.join(" ");
+    console.log("Value inserted is not a number");
   }
 }
-console.log("without epicode: ", epify("parola difficile in italano"));
+console.log(check3and7(9));
+console.log(check3and7(11));
+//console.log(check3and7("baba"));
 
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
