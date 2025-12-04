@@ -74,9 +74,9 @@ function epify(str) {
     return strInArray.join(" ");
   }
 }
-console.log("without epicode: ", epify("parola difficile in italano"));
+console.log("without epicode: ", epify("parola difficile in italiano"));
 console.log("with epicode: ", epify("epicode is very italian"));
-console.log("with epicode: ", epify("Epicode è una scoula italina di coding"));
+console.log("with epicode: ", epify("Epicode è una scoula italiAna di coding"));
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
@@ -92,8 +92,8 @@ function check3and7(n) {
     console.log("Value inserted is not a number");
   }
 }
-console.log(check3and7(9));
-console.log(check3and7(11));
+/* console.log(check3and7(9));
+console.log(check3and7(11)); */
 //console.log(check3and7("baba"));
 
 /* ESERCIZIO 7
@@ -119,13 +119,18 @@ console.log(reverseString("pindamonhangaba"));
 
 console.log("<---- ESERCIZIO 8 ---->");
 function upperFirst(str) {
-  let strInArray = str.split("");
-  let firstLetter = strInArray[0].toUpperCase();
-  strInArray.splice(0, 1);
-  return firstLetter + strInArray.join("");
+  let strInArray = str.split(" ");
+  let upperCasedArr = [];
+  for (let i = 0; i < strInArray.length; i++) {
+    let eachWordArray = strInArray[i].split("");
+    let firstLetter = eachWordArray[0].toUpperCase();
+    eachWordArray.splice(0, 1);
+    upperCasedArr.push(firstLetter + eachWordArray.join(""));
+  }
+  return upperCasedArr.join(" ");
 }
 
-console.log(upperFirst("anhangabau"));
+console.log(upperFirst("anhangabau é um lugar de são Paulo"));
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
@@ -146,8 +151,9 @@ console.log(cutString("jabuticaba"));
 */
 
 console.log("<---- ESERCIZIO 10 ---->");
+
+const arrayOfNumbers = [];
 function giveMeRandom(n) {
-  let arrayOfNumbers = [];
   for (let i = 0; i < n; i++) {
     let randomNum = Math.floor(Math.random() * 11);
     arrayOfNumbers.push(randomNum);
@@ -155,3 +161,7 @@ function giveMeRandom(n) {
   return arrayOfNumbers;
 }
 console.log(giveMeRandom(18));
+
+/* 
+---------------------------------------------- EXTRAS ------------------------------------------------ 
+*/
